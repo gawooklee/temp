@@ -129,7 +129,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">전화 문의</h4>
-                    <p className="text-gray-600">02-1234-5678</p>
+                    <p className="text-gray-600">02-898-4062</p>
                     <p className="text-gray-600">평일 09:00 ~ 18:00</p>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">이메일 문의</h4>
-                    <p className="text-gray-600">contact@metatech.co.kr</p>
+                    <p className="text-gray-600">woorim4062@ecount.co.kr</p>
                     <p className="text-gray-600">24시간 접수 가능</p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-800">오시는 길</h4>
-                    <p className="text-gray-600">경기도 화성시 봉담읍 동화리 283</p>
+                    <p className="text-gray-600">경기도 안양시 만안구 박달동 681 (오리로 16)</p>
                   </div>
                 </div>
               </div>

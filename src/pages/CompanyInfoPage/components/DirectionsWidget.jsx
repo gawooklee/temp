@@ -68,7 +68,7 @@ const DirectionsWidget = () => {
 
       <div className="mt-6 p-4 bg-gray-50 rounded-lg">
         <h4 className="font-medium text-gray-800 mb-1">주소</h4>
-        <p className="text-gray-600">서울특별시 서초구 신반포로 176</p>
+        <p className="text-gray-600">경기도 안양시 만안구 박달동 681 (오리로 16)</p>
       </div>
     </div>
   );

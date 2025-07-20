@@ -3,20 +3,20 @@ import React, { useState } from 'react';
 const CompanyStructurePage = () => {
   const [mainCompany] = useState({
     id: 'main',
-    name: '메인 코퍼레이션',
-    description: '혁신적인 기술과 고객 중심의 서비스로 미래를 선도하는 기업입니다.',
+    name: '우림금속',
+    description: '최고의 품질과 기술력을 바탕으로, 대한민국 산업의 기반이 되는 동 및 동합금 소재를 생산하는 비철금속 전문 기업입니다.',
   });
 
   const [affiliates] = useState([
     {
       id: 'affiliate1',
-      name: '솔루션 테크',
-      description: '최첨단 소프트웨어 개발 및 디지털 솔루션 전문 기업입니다.',
+      name: '주화금속',
+      description: '우림금속의 핵심 소재를 바탕으로, 고정밀 부품 가공 및 특수합금 개발에 주력하는 기술 중심 기업입니다.',
     },
     {
       id: 'affiliate2',
-      name: '미래 투자 그룹',
-      description: '유망 스타트업 발굴 및 전략적 투자를 통해 성장을 지원합니다.',
+      name: '대승산업',
+      description: '금속 및 산업 원자재의 안정적인 공급망 관리를 책임지는 물류 및 유통 전문 기업입니다.',
     },
   ]);
 
@@ -24,7 +24,7 @@ const CompanyStructurePage = () => {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
-          우리 회사 및 계열사
+          우리 회사 및 관계사
         </h1>
         <p className="mt-4 text-xl text-gray-600">
           견고한 파트너십으로 함께 성장하는 우리의 기업 구조를 소개합니다.

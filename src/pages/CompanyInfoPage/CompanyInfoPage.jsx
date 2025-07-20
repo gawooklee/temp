@@ -2,8 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import CeoGreetingContent from './components/CeoGreetingContent'
 import CompanyStructurePage from './components/CompanyStructurePage'
 import DirectionsWidget from './components/DirectionsWidget'
-
-
+import LMEPriceWidget from './components/LMEPriceWidget'
+import OrganizationChart from './components/OrganizationChart'
+import ProductList from './components/ProductList'
+import BrassRodTabs from './components/BrassRodTabs'
+import ProcessingCapabilities from './components/ProcessingCapabilities'
+import IdealTalentProfile from './components/IdealTalentProfile'
 
 // --- 1. 데이터 구조: 각 항목에 고유 id와 label 부여 ---
 const menuData = [
@@ -22,6 +26,7 @@ const menuData = [
     id: 'products',
     title: '제품소개', 
     items: [
+      { id: 'lme-charts', label: 'LME 시세' },
       { id: 'raw-materials', label: '원재료' },
       { id: 'brass-rods', label: '황동봉' },
       { id: 'special-materials', label: '특수소재' },
@@ -97,13 +102,25 @@ function ContentArea({ mainTitle, subTitle, subId }) {
         return <CompanyStructurePage/>
       case 'directions':
         return <DirectionsWidget/>
+      case 'lme-charts':
+        return <LMEPriceWidget/>
+      case 'organization':
+        return <OrganizationChart/>
+      case 'raw-materials':
+        return <ProductList/>
+      case 'brass-rods':
+        return <BrassRodTabs/>
+      case 'special-materials':
+        return <ProcessingCapabilities/>
+      case 'talent':
+        return <IdealTalentProfile/>
       default:
         return <DefaultContent title={subTitle} />;
     }
   };
 
   return (
-    <div className="space-y-8 ">
+    <div className="space-y-4">
       <header>
         <div className="text-sm text-gray-500 mb-2" aria-label="breadcrumb">
           <span className="cursor-default">{mainTitle}</span>
@@ -210,7 +227,7 @@ export default function CompanyInfoPage() {
         onSelectSub={setCurrentSubId}
         getDefaultMenu={getDefaultMenu}
       />
-      <main className="flex-1 p-6 md:p-10">
+      <main className="flex-1 p-4 md:p-6">
         <div className="md:hidden mb-6">
           <div className="flex items-center justify-between">
             <button

@@ -5,30 +5,33 @@ function Footer() {
     <footer className="bg-[#0A2342] text-white py-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between">
+
           <div className="mb-8 md:mb-0">
             <h3 className="text-2xl font-gmarket font-bold mb-4">우림금속</h3>
             <p className="text-gray-300 max-w-md">최고 품질의 비철금속 원자재를 안정적으로 공급하는 전문 기업</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div>
+          
+          {/* <div className="grid grid-cols-2 md:grid-cols-3 gap-8"> */}
+            {/* <div>
               <h4 className="font-gmarket font-bold text-lg mb-4">메뉴</h4>
               <ul className="space-y-2">
-                {/* href="#" 대신 Link to="..." 사용 */}
+             
                 <li><Link to="/about" className="text-gray-300 hover:text-white transition duration-300">회사소개</Link></li>
                 <li><Link to="/products" className="text-gray-300 hover:text-white transition duration-300">제품소개</Link></li>
                 <li><Link to="/technology" className="text-gray-300 hover:text-white transition duration-300">기술력/설비</Link></li>
                 <li><Link to="/contact" className="text-gray-300 hover:text-white transition duration-300">문의하기</Link></li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h4 className="font-gmarket font-bold text-lg mb-4">연락처</h4>
               <ul className="space-y-2 text-gray-300">
-                <li>02-1234-5678</li>
-                <li>contact@metatech.co.kr</li>
-                <li>경기도 화성시 봉담읍 동화리 283</li>
+                <li>02-898-4062</li>
+                <li>woorim4062@ecount.co.kr</li>
+                <li>경기도 안양시 만안구 박달동 681 (오리로 16)</li>
               </ul>
             </div>
-            <div>
+            
+            <div className="pt-8 md:pt-0">
               <h4 className="font-gmarket font-bold text-lg mb-4">인증서</h4>
               <div className="flex space-x-4">
                 <div className="bg-white p-2 rounded-md w-16 h-16 flex items-center justify-center">
@@ -39,7 +42,7 @@ function Footer() {
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </div>
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">© 2025 우림금속 Co., Ltd. All rights reserved.</p>
