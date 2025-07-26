@@ -8,6 +8,10 @@ import ProductList from './components/ProductList'
 import BrassRodTabs from './components/BrassRodTabs'
 import ProcessingCapabilities from './components/ProcessingCapabilities'
 import IdealTalentProfile from './components/IdealTalentProfile'
+import processImage from '@/assets/images/공정도.png'
+import CopperRodDetails from './components/CopperRodDetails';
+import QnAPage from './components/QnaAccordion'
+import NoticeBoard from './components/NoticeBoard';
 
 // --- 1. 데이터 구조: 각 항목에 고유 id와 label 부여 ---
 const menuData = [
@@ -29,19 +33,10 @@ const menuData = [
       { id: 'lme-charts', label: 'LME 시세' },
       { id: 'raw-materials', label: '원재료' },
       { id: 'brass-rods', label: '황동봉' },
-      { id: 'special-materials', label: '특수소재' },
+      { id: 'copper-rods', label: '동봉' },
       { id: 'process', label: '공정도' },
     ]
-  },
-  { 
-    id: 'rnd',
-    title: '연구개발', 
-    items: [
-      { id: 'quality-control', label: '품질관리' },
-      { id: 'licenses', label: '라이센스' },
-    ]
-  },
-  {
+  }, {
     id: 'careers',
     title: '채용정보',
     items: [
@@ -54,8 +49,6 @@ const menuData = [
     id: 'support',
     title: '고객센터',
     items: [
-      { id: 'msds', label: 'MSDS' },
-      { id: 'sgs-reports', label: 'SGS 성적서' },
       { id: 'qna', label: 'Q&A' },
       { id: 'notices', label: '공지사항' },
     ]
@@ -89,6 +82,8 @@ const DefaultContent = ({ title }) => (
 );
 
 
+
+
 // --- 페이지의 핵심 로직을 담은 컴포넌트들 ---
 
 function ContentArea({ mainTitle, subTitle, subId }) {
@@ -114,6 +109,14 @@ function ContentArea({ mainTitle, subTitle, subId }) {
         return <ProcessingCapabilities/>
       case 'talent':
         return <IdealTalentProfile/>
+      case "process":
+        return <img src={processImage}></img>
+      case "copper-rods":
+        return <CopperRodDetails/>
+      case "qna":
+        return <QnAPage/>
+      case "notices":
+        return <NoticeBoard/>
       default:
         return <DefaultContent title={subTitle} />;
     }

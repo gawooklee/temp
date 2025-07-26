@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function TechCardsSection() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const yearsOfExperience = new Date().getFullYear() - 2000;
 
   const cards = [
     {
@@ -45,7 +46,7 @@ export default function TechCardsSection() {
           {/* ★★★ 색상 변경 ★★★ */}
           <div className="w-20 h-1 bg-[#B87333] mx-auto"></div>
           <p className="text-gray-600 mt-6 text-lg max-w-2xl mx-auto">
-            25년 전통의 기술력으로 최고의 품질을 보증합니다
+            {yearsOfExperience}년 전통의 기술력으로 최고의 품질을 보증합니다
           </p>
         </div>
 
@@ -106,7 +107,7 @@ export default function TechCardsSection() {
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="border-t-2 border-gray-300 pt-8">
             {/* ★★★ 색상 변경 ★★★ */}
-            <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">{yearsOfExperience}+</div>
             <div className="text-gray-600 uppercase tracking-wider text-sm font-semibold">년 전통</div>
           </div>
           <div className="border-t-2 border-gray-300 pt-8">

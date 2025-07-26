@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import generalBrass from '@/assets/images/general-brass.jpg'
+import generalBrass from '@/assets/images/구리합금.png'
 import highStrengthBrass from '@/assets/images/high-strength-brass.png'
 import leadFreeBrass from '@/assets/images/lead-free-brass.jpg'
 

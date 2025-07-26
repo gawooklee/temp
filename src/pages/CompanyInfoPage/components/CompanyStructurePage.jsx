@@ -11,7 +11,7 @@ const CompanyStructurePage = () => {
     {
       id: 'affiliate1',
       name: '주화금속',
-      description: '우림금속의 핵심 소재를 바탕으로, 고정밀 부품 가공 및 특수합금 개발에 주력하는 기술 중심 기업입니다.',
+      description: '우림금속의 핵심 소재에 필요한 주 원자재를 매입 및 공급하는 업체 입니다. ',
     },
     {
       id: 'affiliate2',

@@ -161,7 +161,7 @@ export default function ProductInfoSection() {
           </p>
         </header>
         
-        <ProductShowcase />
+        {/* <ProductShowcase /> */}
         <InfoAndMedia />
       </div>
     </div>

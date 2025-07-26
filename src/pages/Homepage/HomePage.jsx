@@ -33,20 +33,20 @@ function HomePage() {
           <div className="flex flex-col md:flex-row items-center mb-16">
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
               <h3 className="text-2xl font-gmarket font-bold text-[#0A2342] mb-4">기업 비전</h3>
-              <p className="text-gray-700 mb-6">최첨단 기술과 품질 관리 시스템을 바탕으로 국내 최고의 비철금속 전문 기업으로 성장하며, 고객과의 신뢰를 최우선 가치로 삼습니다.</p>
+              <p className="text-gray-700 mb-6">최첨단 기술과 품질 관리 시스템을 바탕으로 국내 최고의 비철금속/황동봉 전문 기업으로 성장하며, 고객과의 신뢰를 최우선 가치로 삼습니다.</p>
               <div className="space-y-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1"><svg className="h-5 w-5 text-[#B87333]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg></div>
-                  <p className="ml-3 text-gray-700">2005년 설립 이후 꾸준한 성장</p>
+                  <p className="ml-3 text-gray-700">2000년 설립 이후 꾸준한 성장</p>
                 </div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1"><svg className="h-5 w-5 text-[#B87333]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg></div>
-                  <p className="ml-3 text-gray-700">연간 5,000톤 이상의 비철금속 공급</p>
+                  <p className="ml-3 text-gray-700">연간 1,500톤 이상의 비철금속 공급</p>
                 </div>
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1"><svg className="h-5 w-5 text-[#B87333]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg></div>
                   <p className="ml-3 text-gray-700">ISO 9001 품질 경영 시스템 인증</p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="md:w-1/2">
