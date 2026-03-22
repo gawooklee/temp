@@ -77,7 +77,7 @@ function Footer() {
                 </div>
               </div>
               <div className="pt-2 pl-11">
-                <Link to="/contact" className="text-xs text-[#B87333] hover:text-[#D4AF37] border-b border-[#B87333]/30 pb-0.5 transition-all inline-block hover:border-b-[#D4AF37]">
+                <Link to="/about?tab=directions" className="text-xs text-[#B87333] hover:text-[#D4AF37] border-b border-[#B87333]/30 pb-0.5 transition-all inline-block hover:border-b-[#D4AF37]">
                   상세 지도로 찾아오시는 길 →
                 </Link>
               </div>
