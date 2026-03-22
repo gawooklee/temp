@@ -31,7 +31,7 @@ function Footer() {
               </ul>
             </div>
             
-            <div className="pt-8 md:pt-0">
+            {/* <div className="pt-8 md:pt-0">
               <h4 className="font-gmarket font-bold text-lg mb-4">인증서</h4>
               <div className="flex space-x-4">
                 <div className="bg-white p-2 rounded-md w-16 h-16 flex items-center justify-center">
@@ -41,11 +41,11 @@ function Footer() {
                   <span className="text-xs font-bold text-[#0A2342]">KS</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           {/* </div> */}
         </div>
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© 2025 우림금속 Co., Ltd. All rights reserved.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">© {new Date().getFullYear()} 우림금속 Co., Ltd. All rights reserved.</p>
           <div className="flex space-x-6">
             {/* 소셜 미디어 링크들은 외부 링크이므로 a 태그를 그대로 사용해도 괜찮습니다. */}
             <a href="#" className="text-gray-400 hover:text-white transition duration-300">

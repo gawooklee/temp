@@ -1,7 +1,9 @@
 {
   "nav": {
-    "company_info": "Corporate Info" ,
-    "technology": "Technology",
-    "contact": "Contact"
+    "company_info": "About Us",
+    "products": "Products",
+    "careers": "Careers",
+    "support": "Support",
+    "contact": "Contact Us"
   }
 }

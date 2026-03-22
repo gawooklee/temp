@@ -8,7 +8,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en', // 기본 언어
+    lng: 'ko', // 초기 기본 언어를 한국어로 강제 설정
+    fallbackLng: 'ko', // 기본 언어
     supportedLngs: ['en', 'ko'], // 지원하는 언어
     backend: {
       loadPath: '/locales/{{lng}}/translation.json', // 언어 파일 경로
