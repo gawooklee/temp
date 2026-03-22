@@ -7,11 +7,16 @@ const ContactPage = () => {
     email: '',
     phone: '',
     productInterest: '',
-    quantity: '',
+    quantity: '', // 필요하면 폼이나 스크립트에 추가
     message: '',
   });
 
-  const handleChange = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 구글 앱스 스크립트 배포 시 발급받은 URL을 여기에 붙여넣으세요.
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxSdrZyjtVJebtjNOzODS6StrDKxfFWh3mjceduXU-MZg9Le-4pogNX-wmbXHzQsrNo1A/exec';
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -19,10 +24,58 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('문의가 접수되었습니다. (개발자 콘솔을 확인해보세요)');
-    console.log('최종 제출 데이터:', formData);
+
+    // 필수 입력값 상세 체크 및 안내
+    const requiredFields = [
+      { key: 'companyName', label: '회사명' },
+      { key: 'email', label: '이메일' },
+      { key: 'message', label: '문의 내용' }
+    ];
+
+    for (const field of requiredFields) {
+      if (!formData[field.key] || formData[field.key].trim() === '') {
+        alert(`${field.label} 항목을 입력해 주세요.`);
+        return;
+      }
+    }
+
+    setIsSubmitting(true);
+
+    // 구글 스크립트에서 읽기 쉽도록 FormData 객체로 변환
+    const submitData = new FormData();
+    Object.keys(formData).forEach(key => {
+      submitData.append(key, formData[key]);
+    });
+
+    try {
+      // mode: 'no-cors'는 구글 웹앱 연동 시 발생하는 CORS 에러 우회를 위해 필수
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: submitData
+      });
+
+      // no-cors 설정 시 브라우저가 json 응답을 읽지는 못하므로, 에러 없이 지나갔다면 성공으로 간주
+      alert('문의가 성공적으로 전달되었습니다! 곧 연락드리겠습니다.');
+
+      // 제출 후 폼 초기화
+      setFormData({
+        companyName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        productInterest: '',
+        quantity: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -38,7 +91,7 @@ const ContactPage = () => {
           <div className="md:w-1/2">
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md">
               <div className="mb-6">
-                <label htmlFor="companyName" className="block text-gray-700 font-medium mb-2">회사명</label>
+                <label htmlFor="companyName" className="block text-gray-700 font-medium mb-2">회사명 *</label>
                 <input
                   type="text"
                   id="companyName"
@@ -60,7 +113,7 @@ const ContactPage = () => {
                 />
               </div>
               <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">이메일</label>
+                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">이메일 *</label>
                 <input
                   type="email"
                   id="email"
@@ -91,18 +144,19 @@ const ContactPage = () => {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0A2342]"
                 >
                   <option value="">제품을 선택하세요</option>
-                  <option value="brass">황동봉</option>
-                  <option value="copper">동 제품</option>
-                  <option value="aluminum">신주</option>
-                  <option value="other">기타</option>
+                  <option value="황동봉">황동봉</option>
+                  <option value="동 제품">동 제품</option>
+                  <option value="신주">신주</option>
+                  <option value="기타">기타</option>
                 </select>
               </div>
               <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">문의 내용</label>
+                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">문의 내용 *</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
+                  required
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0A2342]"
@@ -110,9 +164,13 @@ const ContactPage = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#0A2342] hover:bg-[#1A3B6E] text-white font-bold py-3 px-4 rounded-md transition duration-300"
+                disabled={isSubmitting}
+                className={`w-full font-bold py-3 px-4 rounded-md transition duration-300 ${isSubmitting
+                  ? 'bg-gray-400 cursor-not-allowed text-white'
+                  : 'bg-[#0A2342] hover:bg-[#1A3B6E] text-white'
+                  }`}
               >
-                문의 보내기
+                {isSubmitting ? '전송 중...' : '문의 보내기'}
               </button>
             </form>
           </div>

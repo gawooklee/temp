@@ -27,11 +27,22 @@ const ManufacturingProcessChart = () => {
           {steps.map((step, index) => (
             <div key={step.id} className="relative flex flex-col items-center text-center group">
               
-              {/* Desktop Arrow Connectors */}
-              {index !== steps.length - 1 && index % 4 !== 3 && (
-                <div className="hidden xl:block absolute top-[40px] left-[65%] w-[70%] h-[2px] bg-gradient-to-r from-[#0A2342]/10 to-[#B87333]/50 z-0">
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[6px] border-y-transparent border-l-[8px] border-l-[#B87333]/50"></div>
-                </div>
+              {/* Desktop & Tablet Arrow Connectors */}
+              {index !== steps.length - 1 && (
+                <>
+                  {/* XL (4 cols) Horizontal Arrow */}
+                  {index % 4 !== 3 && (
+                    <div className="hidden xl:block absolute top-[40px] left-[65%] w-[70%] h-[2px] bg-gradient-to-r from-[#0A2342]/10 to-[#B87333]/50 z-0">
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[6px] border-y-transparent border-l-[8px] border-l-[#B87333]/50"></div>
+                    </div>
+                  )}
+                  {/* MD/LG (2 cols) Horizontal Arrow */}
+                  {index % 2 !== 1 && (
+                    <div className="hidden md:block xl:hidden absolute top-[40px] left-[65%] w-[70%] h-[2px] bg-gradient-to-r from-[#0A2342]/10 to-[#B87333]/50 z-0">
+                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[6px] border-y-transparent border-l-[8px] border-l-[#B87333]/50"></div>
+                    </div>
+                  )}
+                </>
               )}
 
               {/* Number Badge */}
@@ -49,9 +60,9 @@ const ManufacturingProcessChart = () => {
                 <p className="text-gray-500 text-[15px] font-light break-keep leading-relaxed">{step.desc}</p>
               </div>
 
-              {/* Mobile/Tablet vertical arrows */}
+              {/* Mobile vertical arrows */}
               {index !== steps.length - 1 && (
-                <div className="xl:hidden w-px h-10 lg:h-12 bg-gray-200 my-2 lg:my-4 relative">
+                <div className="md:hidden w-px h-10 bg-gray-200 my-2 relative">
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 border-x-[5px] border-x-transparent border-t-[6px] border-t-gray-300"></div>
                 </div>
               )}
